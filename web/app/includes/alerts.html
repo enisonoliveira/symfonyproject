@@ -1,0 +1,41 @@
+<div>
+
+    <div class="alertBox">
+        <div class="header">
+
+            <span  class="title">Notificações</span>
+        </div>
+        <div class="body">
+            <div  >
+                <a ng-if="notificacao.link==''" class="item read" ng-click="lernotificacao(notificacao.idnotificacao, notificacao.link)">
+                        <div class="thumb">
+                            <img >
+                        </div>
+                        <div class="infos">
+                            <div class="date"></div>
+                            <div class="title">
+                            </div>
+                            <div  class="descript">
+                            </div>
+                        </div>
+                    </a>
+                <a class="item read"  href="">
+                        <div class="thumb">
+                            <img src="">
+                        </div>
+                        <div class="infos">
+                            <div class="date"></div>
+                            <div class="title">
+                            </div>
+                            <div  class="descript">
+                            </div>
+                        </div>
+                    </a>
+            </div>
+            <a id="alertClose"   ng-click="listar_todos('notificacao', $event)" href="#" class="seeAll">
+                Ver tudo
+            </a>
+        </div>
+    </div>
+    <div id="alertClose_alerts" class="alertClose"></div>
+</div>

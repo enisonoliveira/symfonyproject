@@ -1,0 +1,87 @@
+/* MOBILE AND TABLET */
+@media screen and (max-width: 1180px){
+		
+	.container{
+		width: 100%;
+	}
+	#wrapper{
+	  width: 100%;
+	}
+	#loginCenter{
+		padding: 0 5%;
+		width: 100%;
+    margin: 5% auto 0 auto;
+	}
+	.right img{
+		margin-top: 0px;
+		margin-left: 12%;
+	}
+
+	#loginCenter .logo img{
+		max-width: 90%;
+	}
+
+	#loginCenter .box{
+		width: 100%;
+		height: auto;
+		padding: 15px;
+	}
+	#loginCenter .box .form > .title{
+		font-size: 20px;
+	}
+	#loginCenter .box .form{
+		width: 100%;
+		height: auto;
+		padding: 0;
+		border: 0;
+	}
+
+	#loginCenter .box .form form#formSenha.active{
+		max-height: 200px;
+	}
+	#loginCenter .box .form form#formSenha.hidden{
+		max-height: 0px;
+	}
+
+	#loginCenter .box .form .buttons a{
+		margin: 10px 0;
+	}
+
+	#loginCenter .box .form .error{
+		font-size: 12px;
+	}
+	#loginCenter .box .form .buttons a.login, 
+	#loginCenter .box .form .buttons a.voltar{
+		font-size: 18px;
+		padding: 10px 0;
+		margin: 5px 0;
+	}
+	#loginCenter .box .right{
+		padding: 7% 2% 5% 2%;
+		width: 100%;
+		border-top: 1px solid #bdbdbd;
+	}
+
+	#loginCenter .box .right .title .big{
+		font-size: 18px;
+	}
+	#loginCenter .box .right .title .small{
+		font-size: 14px;
+	}
+	#loginCenter .box .right ul{
+		margin: 15px 0;
+	}
+
+	#loginCenter .box .right ul li{
+	  font-size: 12px;
+	  padding: 4px 0 4px 24px;
+	}
+
+	#wrapper.login .footer{
+	  height: auto;
+	  background-size: contain;
+	  margin: -10% auto 0 auto;
+	  padding: 55% 0 0 0;
+	}
+
+}

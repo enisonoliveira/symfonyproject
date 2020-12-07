@@ -1,0 +1,35 @@
+<?php
+
+namespace Acme\ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Phone
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Phone
+{
+    /**
+     * @var integer
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+     /**
+     * @ORM\ManyToOne(targetEntity="Acme\ApiBundle\Entity\PersonOrder", inversedBy="phone")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="personid")
+     */
+    private $person_id;
+
+    /**
+     * @var text
+     * @ORM\Column(name="phone", type="text")
+     */
+    private $phone;
+
+}

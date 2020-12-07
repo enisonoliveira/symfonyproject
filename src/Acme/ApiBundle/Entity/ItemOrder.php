@@ -25,7 +25,7 @@ class ItemOrder
      * @ORM\ManyToOne(targetEntity="\Acme\ApiBundle\Entity\ShipOrder", inversedBy="itemsorder")
      * @ORM\JoinColumn(name="shiporder_id", referencedColumnName="orderid")
      */
-    protected $shiporder;
+    protected $shiporder_id;
 
     /**
      * @var text
@@ -52,10 +52,12 @@ class ItemOrder
     private $price;
 
 
+    
+
     /**
      * Get iditemorder
      *
-     * @return integer 
+     * @return integer
      */
     public function getIditemorder()
     {
@@ -66,19 +68,20 @@ class ItemOrder
      * Set title
      *
      * @param string $title
+     *
      * @return ItemOrder
      */
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -89,19 +92,20 @@ class ItemOrder
      * Set note
      *
      * @param string $note
+     *
      * @return ItemOrder
      */
     public function setNote($note)
     {
         $this->note = $note;
-    
+
         return $this;
     }
 
     /**
      * Get note
      *
-     * @return string 
+     * @return string
      */
     public function getNote()
     {
@@ -112,19 +116,20 @@ class ItemOrder
      * Set quantity
      *
      * @param float $quantity
+     *
      * @return ItemOrder
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-    
+
         return $this;
     }
 
     /**
      * Get quantity
      *
-     * @return float 
+     * @return float
      */
     public function getQuantity()
     {
@@ -135,19 +140,20 @@ class ItemOrder
      * Set price
      *
      * @param string $price
+     *
      * @return ItemOrder
      */
     public function setPrice($price)
     {
         $this->price = $price;
-    
+
         return $this;
     }
 
     /**
      * Get price
      *
-     * @return string 
+     * @return string
      */
     public function getPrice()
     {
@@ -155,25 +161,26 @@ class ItemOrder
     }
 
     /**
-     * Set shiporder
+     * Set shiporderId
      *
-     * @param \Acme\ApiBundle\Entity\ShipOrder $shiporder
+     * @param \Acme\ApiBundle\Entity\ShipOrder $shiporderId
+     *
      * @return ItemOrder
      */
-    public function setShiporder(\Acme\ApiBundle\Entity\ShipOrder $shiporder = null)
+    public function setShiporderId(\Acme\ApiBundle\Entity\ShipOrder $shiporderId = null)
     {
-        $this->shiporder = $shiporder;
-    
+        $this->shiporder_id = $shiporderId;
+
         return $this;
     }
 
     /**
-     * Get shiporder
+     * Get shiporderId
      *
-     * @return \Acme\ApiBundle\Entity\ShipOrder 
+     * @return \Acme\ApiBundle\Entity\ShipOrder
      */
-    public function getShiporder()
+    public function getShiporderId()
     {
-        return $this->shiporder;
+        return $this->shiporder_id;
     }
 }

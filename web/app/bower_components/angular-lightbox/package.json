@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-lightbox",
+        "scope": null,
+        "escapedName": "angular-lightbox",
+        "name": "angular-lightbox",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/andreferraro/Projetos/CameraCaseira/dev/web"
+    ]
+  ],
+  "_from": "angular-lightbox@latest",
+  "_id": "angular-lightbox@1.0.0",
+  "_inCache": true,
+  "_location": "/angular-lightbox",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "puremilllk",
+    "email": "puremilllk@gmail.com"
+  },
+  "_npmVersion": "3.3.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-lightbox",
+    "scope": null,
+    "escapedName": "angular-lightbox",
+    "name": "angular-lightbox",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-lightbox/-/angular-lightbox-1.0.0.tgz",
+  "_shasum": "7d1fd0b3924c9ffd28f7affcee8c3a3ddfb2bc6f",
+  "_shrinkwrap": null,
+  "_spec": "angular-lightbox",
+  "_where": "/Users/andreferraro/Projetos/CameraCaseira/dev/web",
+  "author": {
+    "name": "PureMilllk",
+    "email": "puremilllk@gmail.com",
+    "url": "http://codrips.com"
+  },
+  "bugs": {
+    "url": "https://github.com/PureMilllk/Angular-lightbox/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS directive for lightbox effect.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7d1fd0b3924c9ffd28f7affcee8c3a3ddfb2bc6f",
+    "tarball": "https://registry.npmjs.org/angular-lightbox/-/angular-lightbox-1.0.0.tgz"
+  },
+  "gitHead": "c74f0fc688e0bbbe0c9646c9c7910828ecb68659",
+  "homepage": "https://github.com/PureMilllk/Angular-lightbox#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "puremilllk",
+      "email": "puremilllk@gmail.com"
+    }
+  ],
+  "name": "angular-lightbox",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PureMilllk/Angular-lightbox.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

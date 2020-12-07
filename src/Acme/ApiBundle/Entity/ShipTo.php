@@ -22,9 +22,9 @@ class ShipTo
 
     /**
      * @ORM\ManyToOne(targetEntity="\Acme\ApiBundle\Entity\ShipOrder", inversedBy="itemsorder")
-     * @ORM\JoinColumn(name="orderid", referencedColumnName="orderid")
+     * @ORM\JoinColumn(name="order_id", referencedColumnName="orderid")
      */
-    private $orderid;
+    private $order_id;
 
      /**
      * @var text
@@ -51,10 +51,12 @@ class ShipTo
     private $country;
 
 
+   
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -65,19 +67,20 @@ class ShipTo
      * Set name
      *
      * @param string $name
+     *
      * @return ShipTo
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -88,19 +91,20 @@ class ShipTo
      * Set address
      *
      * @param string $address
+     *
      * @return ShipTo
      */
     public function setAddress($address)
     {
         $this->address = $address;
-    
+
         return $this;
     }
 
     /**
      * Get address
      *
-     * @return string 
+     * @return string
      */
     public function getAddress()
     {
@@ -111,19 +115,20 @@ class ShipTo
      * Set city
      *
      * @param string $city
+     *
      * @return ShipTo
      */
     public function setCity($city)
     {
         $this->city = $city;
-    
+
         return $this;
     }
 
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -134,19 +139,20 @@ class ShipTo
      * Set country
      *
      * @param string $country
+     *
      * @return ShipTo
      */
     public function setCountry($country)
     {
         $this->country = $country;
-    
+
         return $this;
     }
 
     /**
      * Get country
      *
-     * @return string 
+     * @return string
      */
     public function getCountry()
     {
@@ -154,25 +160,26 @@ class ShipTo
     }
 
     /**
-     * Set orderid
+     * Set orderId
      *
-     * @param \Acme\ApiBundle\Entity\ShipOrder $orderid
+     * @param \Acme\ApiBundle\Entity\ShipOrder $orderId
+     *
      * @return ShipTo
      */
-    public function setOrderid(\Acme\ApiBundle\Entity\ShipOrder $orderid = null)
+    public function setOrderId(\Acme\ApiBundle\Entity\ShipOrder $orderId = null)
     {
-        $this->orderid = $orderid;
-    
+        $this->order_id = $orderId;
+
         return $this;
     }
 
     /**
-     * Get orderid
+     * Get orderId
      *
-     * @return \Acme\ApiBundle\Entity\ShipOrder 
+     * @return \Acme\ApiBundle\Entity\ShipOrder
      */
-    public function getOrderid()
+    public function getOrderId()
     {
-        return $this->orderid;
+        return $this->order_id;
     }
 }

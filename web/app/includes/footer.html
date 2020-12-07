@@ -1,0 +1,57 @@
+<footer ng-controller="menuController">
+    <div class="container">
+        <div class="left">
+            <a href="/" ng-click="listar_todos('paginainicial', $event)" class="logo">
+                <img src="{{::clientes.logorodape}}" alt="">
+            </a>
+            <div class="social" id="socialicone" >
+                <a  target="_blank" href="{{::clientes.facebook}}" class="facebook">Facebook</a>
+                <a  target="_blank" href="{{::clientes.twitter}}" class="twitter">Twitter</a>
+                <a  target="_blank" href="{{::clientes.instagram}}" class="instagram">Instagram</a>
+            </div>
+            <div class="menus desktop">
+                <ul>
+                    <li><a  ng-click="listar_todos('paginainicial',$event)" href="#/">Home</a></li>
+                    <li><a href="#/politica-privacidade">Política de privacidade</a></li>
+                    <li><a href="#/termos-uso">Termos de uso</a></li>
+                </ul>
+                <ul>
+                    <li><a  ng-click="listar_todos('suporte',$event)"  href="#/suporte">Suporte</a></li>
+                    <li><a  ng-click="listar_todos('videosfavorito',$event,1,'VÍDEOS FAVORITOS')"  href="#">Favoritos</a></li>
+                    <li><a ng-click="listar_todos('historico',$event,1,'HISTÓRICO DE NAVEGAÇÃO')" href="#">Histórico</a></li>
+                </ul>
+                <ul>
+                    <li><a ng-click="sair($event)" href="">Desconectar</a></li>
+                </ul>
+            </div>
+            <div class="menus mobile">
+                <ul>
+                    <li><a  ng-click="listar_todos('paginainicial',$event)" href="#/">Home</a></li>
+                    <li><a href="#/politica-privacidade">Políticas de privacidade</a></li>
+                    <li><a href="#/termos-uso">Termos de uso</a></li>
+                    <li><a ng-click="listar_todos('suporte',$event)" href="#/suporte">Suporte</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#" ng-click="listar_todos('videosfavorito',$even,'VÍDEOS FAVORITOS')">Favoritos</a></li>
+                    <li><a href="#" ng-click="listar_todos('historico',$event,'HISTÓRICO DE NAVEGAÇÃO')">Histórico</a></li>
+                    <li><a href="#">Desconectar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>Sigilo absoluto</li>
+                <li>Site 100% Seguro</li>
+            </ul>
+        </div>
+        <div class="full">
+            <p><strong>Todas as modelos são maiores de 18 anos.</strong></p>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            {{::clientes.slogan}}
+        </div>
+    </div>
+</footer>
+<div id="toTop"></div>

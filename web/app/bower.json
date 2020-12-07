@@ -1,0 +1,32 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "viniciusferreira <enisonoliveira@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/viniciusferreira/videoapi",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loader": "~1.5.0",
+    "angular-owl-carousel": "^0.3.0",
+    "angular-mocks": "~1.5.0",
+    "angular-owl-carousel2": "*",
+    "angular-route": "~1.5.0",
+    "html5-boilerplate": "^5.3.0",
+    "angular-sanitize": "~1.5.0",
+    "angular-spinner": "^1.0.1",
+    "angular-spinners": "^5.1.2",
+    "angular-md5": "^0.1.10",
+    "ng-dropzone": "ngdropzone#^2.0.2",
+    "angular-dropzone": "^0.1.2"
+  }
+}

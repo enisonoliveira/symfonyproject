@@ -1,0 +1,36 @@
+<?php
+
+namespace Acme\ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PersonOrder
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class PersonOrder
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="personid", type="integer")
+     * @ORM\Id
+     */
+    private $personid;
+
+    /**
+     * @var text
+     * @ORM\Column(name="personname", type="text")
+     */
+
+    private  $personname;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="\Acme\ApiBundle\Entity\Phone", mappedBy="person_id")
+     */
+
+    protected $phone;
+
+}

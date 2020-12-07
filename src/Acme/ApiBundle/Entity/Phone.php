@@ -22,21 +22,21 @@ class Phone
 
      /**
      * @ORM\ManyToOne(targetEntity="Acme\ApiBundle\Entity\PersonOrder", inversedBy="phone")
-     * @ORM\JoinColumn(name="personid", referencedColumnName="personid")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="personid")
      */
-    private $personid;
+    private $person_id;
 
     /**
      * @var text
      * @ORM\Column(name="phone", type="text")
      */
     private $phone;
-   
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -47,19 +47,20 @@ class Phone
      * Set phone
      *
      * @param string $phone
+     *
      * @return Phone
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
-    
+
         return $this;
     }
 
     /**
      * Get phone
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -67,25 +68,26 @@ class Phone
     }
 
     /**
-     * Set personid
+     * Set personId
      *
-     * @param \Acme\ApiBundle\Entity\PersonOrder $personid
+     * @param \Acme\ApiBundle\Entity\PersonOrder $personId
+     *
      * @return Phone
      */
-    public function setPersonid(\Acme\ApiBundle\Entity\PersonOrder $personid = null)
+    public function setPersonId(\Acme\ApiBundle\Entity\PersonOrder $personId = null)
     {
-        $this->personid = $personid;
-    
+        $this->person_id = $personId;
+
         return $this;
     }
 
     /**
-     * Get personid
+     * Get personId
      *
-     * @return \Acme\ApiBundle\Entity\PersonOrder 
+     * @return \Acme\ApiBundle\Entity\PersonOrder
      */
-    public function getPersonid()
+    public function getPersonId()
     {
-        return $this->personid;
+        return $this->person_id;
     }
 }

@@ -1,0 +1,26 @@
+    <div ng-controller="MainController">
+    <div class="userBox">
+        <div class="header">
+            <div ng-repeat="usuario in ::datauser" class="userInfos">
+                <div class="dados">
+                    <span class="name">{{usuario.name}}</span>
+                    <div class="email">{{usuario.email}}</div>
+                </div>
+                <div class="dados">
+                    <span class="name">Data do ultimo acesso</span>
+                    <div class="email"> {{dateAcess(usuario.dh_actualization)}} Hs</div>
+                </div>
+                <div class="dados">
+                    <span class="name">Total de acesso</span>
+                    <div class="email"> {{usuario.totaacess}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="links">
+            <a ng-click="sair($event)" href="#">
+                Sair
+            </a>
+        </div>
+    </div>
+    <div id="userBoxClose_user" class="userBoxClose"></div>
+</div>

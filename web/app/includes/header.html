@@ -1,0 +1,36 @@
+<header id="top">
+    <div>
+        <div id="menuAnchor"></div>
+        <div class="logo">
+            <h1>
+                <a ng-click="listar_todos('paginainicial', $event)">
+                </a>
+            </h1>
+        </div>
+        <div class="icons">
+            <div id="searchAnchor"></div>
+            <div ng-click="maracartodasnotificacao($event)" id="alertsAnchor">
+                <span ng-if="notificacaoesnaolidas.length > 0" class="alerts"></span>
+            </div>
+            <div id="accountAnchor">
+                <!-- <img ="img/ex/user.jpg" alt="Usuário"> -->
+                <img id="imagemuser" src="img/user.png" alt="Fazer Login">
+            </div>
+        </div>
+    </div>
+    <div id="search">
+        <form action="?">
+            <button ng-click="listar_categoria($event)" type="submit"></button>
+            <!--<input type="text" placeholder="Digite aqui o que deseja pesquisar">-->
+            <autocomplete id='autocomplete' placeholder="Digite o que deseja pesquisar e aperte enter" data="movies"></autocomplete>
+        </form>
+        <a ng-click="busca('busca', $event)" href="#" class="advanc">Busca Avançada</a>
+        <div id="suggests">
+            <a href="#">arvore</a>
+            <a href="#">arquitetura</a>
+            <a href="#">arte</a>
+        </div>
+    </div>
+    <div ng-include="'includes/userbox.html'"></div>
+
+</header>

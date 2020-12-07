@@ -1,0 +1,35 @@
+{
+  "name": "angular-owl-carousel",
+  "authors": [
+    "Jonah Dahlquist <jonah@nucleussystems.com>",
+    "Rick de Graaff <info@rickdegraaff.nl>"
+  ],
+  "description": "Populate Owl Carousel with data from an Angular controller",
+  "main": "src/angular-owl-carousel.js",
+  "keywords": [
+    "owl",
+    "carousel",
+    "angular",
+    "directive"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jonahbron/angular-owl-carousel",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "4e8d3376234f2fe2d69f2844dbdaaf0c8c2b5a16"
+  },
+  "_source": "https://github.com/jonahbron/angular-owl-carousel.git",
+  "_target": "^0.3.0",
+  "_originalSource": "angular-owl-carousel",
+  "_direct": true
+}

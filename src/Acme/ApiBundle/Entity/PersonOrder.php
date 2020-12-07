@@ -5,7 +5,7 @@ namespace Acme\ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PeopleOrders
+ * PersonOrder
  * @ORM\Table()
  * @ORM\Entity
  */
@@ -28,7 +28,7 @@ class PersonOrder
 
 
     /**
-     * @ORM\OneToMany(targetEntity="\Acme\ApiBundle\Entity\Phone", mappedBy="peopleorders")
+     * @ORM\OneToMany(targetEntity="\Acme\ApiBundle\Entity\Phone", mappedBy="person_id")
      */
 
     protected $phone;
@@ -40,11 +40,25 @@ class PersonOrder
     {
         $this->phone = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
+    /**
+     * Set personid
+     *
+     * @param integer $personid
+     *
+     * @return PersonOrder
+     */
+    public function setPersonid($personid)
+    {
+        $this->personid = $personid;
+
+        return $this;
+    }
+
     /**
      * Get personid
      *
-     * @return integer 
+     * @return integer
      */
     public function getPersonid()
     {
@@ -55,32 +69,20 @@ class PersonOrder
      * Set personname
      *
      * @param string $personname
-     * @return PeopleOrders
+     *
+     * @return PersonOrder
      */
     public function setPersonname($personname)
     {
         $this->personname = $personname;
-    
-        return $this;
-    }
 
-    /**
-     * Set personid
-     *
-     * @param string $personid
-     * @return PeopleOrders
-     */
-    public function setPersonId($personid)
-    {
-        $this->personid = $personid;
-    
         return $this;
     }
 
     /**
      * Get personname
      *
-     * @return string 
+     * @return string
      */
     public function getPersonname()
     {
@@ -91,12 +93,13 @@ class PersonOrder
      * Add phone
      *
      * @param \Acme\ApiBundle\Entity\Phone $phone
-     * @return PeopleOrders
+     *
+     * @return PersonOrder
      */
     public function addPhone(\Acme\ApiBundle\Entity\Phone $phone)
     {
         $this->phone[] = $phone;
-    
+
         return $this;
     }
 
@@ -113,7 +116,7 @@ class PersonOrder
     /**
      * Get phone
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPhone()
     {

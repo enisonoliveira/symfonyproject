@@ -1,0 +1,38 @@
+<?php
+
+namespace Acme\ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ShipOrder
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class ShipOrder
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="orderid", type="integer")
+     * @ORM\Id
+     */
+    private $orderid;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="\Acme\ApiBundle\Entity\PersonOrder", inversedBy="shiporderperson")
+     * @ORM\JoinColumn(name="personid", referencedColumnName="personid")
+     */
+    private $personid;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="ItemOrder", mappedBy="shiporder_id")
+     */
+
+    protected $items;
+
+  
+}

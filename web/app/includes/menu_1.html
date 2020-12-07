@@ -1,0 +1,158 @@
+
+<div ng-controller="MenuCotroller" class="ng-scope">
+
+    <nav id="menu">
+
+        <!-- Chamada inicial para construção do menu recursivamente -->
+        <ul class="parent-menu">
+            <li class="hidden-dk has-children alerts">
+                <a href="#">
+                    <div class="icon">
+                        <span class="alertsCount">2</span>
+                    </div>
+                    Notificações
+                </a>
+                <div ng-include="'includes/alerts.html'"></div>
+            </li>
+            <li class="hidden-dk has-children account">
+                <a href="#">
+                    <div class="icon"></div>
+                    Minhas informações
+                </a>
+                <div ng-include="'includes/userbox.html'"></div>
+            </li>
+            <li ng-repeat="menu in ::menus" id="menu_nivelPÁGINA INICIAL0" classe="" class="" ng-include="'menu.html'">
+                <a id="menu_nivelPÁGINA INICIAL0" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">PÁGINA INICIAL</a>
+                <ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    
+                </ul>
+            </li><li ng-repeat="menu in ::menus" id="menu_nivelVÍDEOS1" classe="nivel1 has-children" class="nivel1 has-children" ng-include="'menu.html'">
+                <a id="menu_nivelVÍDEOS1" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">VÍDEOS</a>
+                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    <!-- ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelCATEGORIAS0" classe="nivel2    has-children" class="nivel2    has-children" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                        <a id="menu_nivelCATEGORIAS0" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">CATEGORIAS</a>
+                        <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                            <!-- ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelBoquete0" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelBoquete0" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Boquete</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelBanhos1" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelBanhos1" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Banhos</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelConsolos
+                                                                                                                          2" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelConsolos
+                                   2" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Consolos
+                                </a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelFantasias3" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelFantasias3" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Fantasias</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelFestas4" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelFestas4" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Festas</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelFetiches
+                                                                                                                          5" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelFetiches
+                                   5" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Fetiches
+                                </a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelLesbo6" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelLesbo6" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Lesbo</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelShows7" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelShows7" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Shows</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelSurubas8" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelSurubas8" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Surubas</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelSolos9" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelSolos9" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Solos</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelExterno10" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelExterno10" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Externo</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelLoiras11" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelLoiras11" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Loiras</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelMorenas12" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelMorenas12" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Morenas</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelGinastica13" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelGinastica13" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Ginastica</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelSexo14" classe="nivel3" class="nivel3" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                                <a id="menu_nivelSexo14" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Sexo</a>
+                                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                                </ul><!-- end ngIf: menu.categoria_pagina -->
+                            </li><!-- end ngRepeat: menu in ::menu.categoria_pagina -->
+                        </ul><!-- end ngIf: menu.categoria_pagina -->
+                    </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelVideos Novidades1" classe="1" class="1" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                        <a id="menu_nivelVideos Novidades1" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Videos Novidades</a>
+                        <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                            <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                        </ul><!-- end ngIf: menu.categoria_pagina -->
+                    </li><!-- end ngRepeat: menu in ::menu.categoria_pagina --><!-- ngInclude: 'menu.html' --><li id="menu_nivelMais Visualizados
+                                                                                                                  2" classe="" class="" ng-repeat="menu in ::menu.categoria_pagina" ng-include="'menu.html'">
+                        <a id="menu_nivelMais Visualizados
+                           2" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">Mais Visualizados
+                        </a>
+                        <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                            <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                        </ul><!-- end ngIf: menu.categoria_pagina -->
+                    </li><!-- end ngRepeat: menu in ::menu.categoria_pagina -->
+                </ul><!-- end ngIf: menu.categoria_pagina -->
+            </li><!-- end ngRepeat: menu in ::menus --><!-- ngInclude: 'menu.html' --><li ng-repeat="menu in ::menus" id="menu_nivelATRIZEZ2" classe="nivel2" class="nivel2" ng-include="'menu.html'">
+                <a id="menu_nivelATRIZEZ2" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">ATRIZEZ</a>
+                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                </ul><!-- end ngIf: menu.categoria_pagina -->
+            </li><!-- end ngRepeat: menu in ::menus --><!-- ngInclude: 'menu.html' --><li ng-repeat="menu in ::menus" id="menu_nivelMEUS FAVORITOS3" classe="nivel2" class="nivel2" ng-include="'menu.html'">
+                <a id="menu_nivelMEUS FAVORITOS3" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">MEUS FAVORITOS</a>
+                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                </ul><!-- end ngIf: menu.categoria_pagina -->
+            </li><!-- end ngRepeat: menu in ::menus --><!-- ngInclude: 'menu.html' --><li ng-repeat="menu in ::menus" id="menu_nivelHISTÓRICO DE NAVEGAÇÃO4" classe="nivel1" class="nivel1" ng-include="'menu.html'">
+                <a id="menu_nivelHISTÓRICO DE NAVEGAÇÃO4" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">HISTÓRICO DE NAVEGAÇÃO</a>
+                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                </ul><!-- end ngIf: menu.categoria_pagina -->
+            </li><!-- end ngRepeat: menu in ::menus --><!-- ngInclude: 'menu.html' --><li ng-repeat="menu in ::menus" id="menu_nivelNOTIFICAÇÃO5" classe="nivel1" class="nivel1" ng-include="'menu.html'">
+                <a id="menu_nivelNOTIFICAÇÃO5" onclick="mouseover_sub(this.id)" ng-click="listar_todos(menu.url, $event, menu.id, menu.nome)" ng-bind="::menu.nome" class="ng-binding ng-scope">NOTIFICAÇÃO</a>
+                <!-- ngIf: menu.categoria_pagina --><ul class="links ng-scope" ng-if="menu.categoria_pagina">
+                    <!-- ngRepeat: menu in ::menu.categoria_pagina -->
+                </ul><!-- end ngIf: menu.categoria_pagina -->
+            </li><!-- end ngRepeat: menu in ::menus -->
+        </ul>
+
+    </nav>
+    <div id="closeMenu" class="open opacity"></div>
+</div>

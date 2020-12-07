@@ -29,11 +29,12 @@ class ShipOrder
 
 
     /**
-     * @ORM\OneToMany(targetEntity="ItemOrder", mappedBy="shiporderitem")
+     * @ORM\OneToMany(targetEntity="ItemOrder", mappedBy="shiporder_id")
      */
 
     protected $items;
 
+  
     /**
      * Constructor
      */
@@ -41,11 +42,25 @@ class ShipOrder
     {
         $this->items = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
+    /**
+     * Set orderid
+     *
+     * @param integer $orderid
+     *
+     * @return ShipOrder
+     */
+    public function setOrderid($orderid)
+    {
+        $this->orderid = $orderid;
+
+        return $this;
+    }
+
     /**
      * Get orderid
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrderid()
     {
@@ -56,19 +71,20 @@ class ShipOrder
      * Set personid
      *
      * @param \Acme\ApiBundle\Entity\PersonOrder $personid
+     *
      * @return ShipOrder
      */
     public function setPersonid(\Acme\ApiBundle\Entity\PersonOrder $personid = null)
     {
         $this->personid = $personid;
-    
+
         return $this;
     }
 
     /**
      * Get personid
      *
-     * @return \Acme\ApiBundle\Entity\PersonOrder 
+     * @return \Acme\ApiBundle\Entity\PersonOrder
      */
     public function getPersonid()
     {
@@ -76,45 +92,33 @@ class ShipOrder
     }
 
     /**
-     * Set shipoderid
+     * Add item
      *
-     * @param string $shipoderid
-     * @return PeopleOrders
-     */
-    public function shipOderid($orderid)
-    {
-        $this->orderid = $orderid;
-    
-        return $this;
-    }
-
-    /**
-     * Add items
+     * @param \Acme\ApiBundle\Entity\ItemOrder $item
      *
-     * @param \Acme\ApiBundle\Entity\ItemOrder $items
      * @return ShipOrder
      */
-    public function addItem(\Acme\ApiBundle\Entity\ItemOrder $items)
+    public function addItem(\Acme\ApiBundle\Entity\ItemOrder $item)
     {
-        $this->items[] = $items;
-    
+        $this->items[] = $item;
+
         return $this;
     }
 
     /**
-     * Remove items
+     * Remove item
      *
-     * @param \Acme\ApiBundle\Entity\ItemOrder $items
+     * @param \Acme\ApiBundle\Entity\ItemOrder $item
      */
-    public function removeItem(\Acme\ApiBundle\Entity\ItemOrder $items)
+    public function removeItem(\Acme\ApiBundle\Entity\ItemOrder $item)
     {
-        $this->items->removeElement($items);
+        $this->items->removeElement($item);
     }
 
     /**
      * Get items
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getItems()
     {

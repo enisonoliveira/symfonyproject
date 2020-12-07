@@ -1,0 +1,23 @@
+<main class="noMin ">
+    <div class="container">
+        <div class="titleSingle">
+            Upload xml ordem de carregamento
+            <div class="box1">
+                <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
+                <button ng-click="sair()" class="send ">Sair!</button>
+            </div>
+        </div>
+        <div id="errormodal " class="modalGeral errormodal ">
+            <div class="content small ">
+                <div class="head ">
+                    Não pode ser alterado!
+                </div>
+                <div class="box ">
+                    <p><strong>Sem acesso a funcionalidade!</strong></p>
+                    <button ng-click="sair($event) " class="send ">Operação não permitida!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>

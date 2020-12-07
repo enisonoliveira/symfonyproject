@@ -1,0 +1,73 @@
+<main  style="background: #fff" class="noMin">
+    <link href='js/calendar/fullcalendar.css' rel="stylesheet" ></link>
+    <link href='js/calendar/bootstrap.css' rel="stylesheet" ></link>
+
+    <div style="width: 100%" class="container">
+        <div class="titleSingle">
+            Envio de e-mail automático-{{title}}
+        </div>
+        <div class="userInfos">
+                <div class="row">
+                    <div class="title">
+                        <ul class="unstyled">
+                            <li  class="ng-scope">
+                                <form name="form" >
+                                    <div class="alert alert-info ng-binding">
+                                        <b><label>Data do envio</label> <input  
+                                            type="text"  style="width: 200px" 
+                                            placeholder="dd/mm/yyyy" ng-model="form.date"  
+                                            class="ng-pristine ng-valid"></b> 
+                                        <b> <input ng-model="form.recorrente" type="checkbox" 
+                                            class="ng-pristine ng-valid"> recorrente</b>
+                                            <br/> <input ng-model="form.type" type="radio" ng-value="1" name="periodo" class="ng-pristine ng-valid"> Diário</b>
+                                            <br/> <input ng-model="form.type" type="radio"  ng-value="2" name="periodo" class="ng-pristine ng-valid"> Semanal</b>
+                                            <br/> <input ng-model="form.type" type="radio"   ng-value="3" name="periodo" class="ng-pristine ng-valid"> Mensal</b> 
+                                            <br/><button onclick="return $('#sucessomodal').show()" class="btn">Enviar para</button>
+                                            <br/><button ng-click="addEvent()" class="btn">Salvar</button>
+                                    </div>
+                                    </form>
+                            </li>     
+                            <li ng-repeat="e in events" class="ng-scope">
+                                <div class="alert alert-info ng-binding">
+                                    <a class="close" ng-click="remove($index,e.id)">x<i class="icon-remove"></i></a>
+                                    <b> <input ng-model="e.title" class="ng-pristine ng-valid"></b> 
+                                    {{e.start}}
+                                </div>
+                            </li>                               
+                        </ul>
+                    </div>
+                    <div ng-if="events.length>0" class="crud">
+                            <div class="title">
+                                    <div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>   
+                    </div>
+                </div>
+                <div id="sucessomodal" class="modalGeral">
+                    <div class="content small">
+                        <div class="head">
+                            Lista de usuário
+                        </div>
+                        <div class="crud">
+                            <div class="header">
+                                <ul>
+                                    <li>
+                                        E-mail
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="line"  style="background: #f1f1f1;" ng-repeat="user  in users" >
+                                <li>
+                                   <label> <input name="email[]"  value="{{user.iduser}}" type="checkbox">
+                                        {{user.email}}
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <button ng-click="sair($event)" class="send">OK!</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</main>
+            

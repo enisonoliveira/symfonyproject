@@ -1,0 +1,140 @@
+<div ng-controller="MainController as ctr">
+    <nav id="menu">
+        <ul class="parent-menu">
+            <li id="menu_alerts_notificacao" classe='close'>
+                <a ng-click="listar_todos('paginainicial',$event,'PAǴINA INICIAL','')" href="#">
+                    PÁGINA INICIAL
+                </a>
+            </li>
+            <li id="operadores" class="has-children">
+                <a onclick="mouseover_sub1(event, 'operadores') ">
+                    OPERADOR
+                </a>
+                <ul>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('users',$event,'PAǴINA INICIAL','')">
+                            Listar operadores
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('newuser',$event,'PAǴINA INICIAL','')">
+                            NOVO OPERADOR
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+            <!-- <li id="cliente" class="has-children">
+                <a onclick="mouseover_sub1(event, 'cliente') ">
+                    Cliente
+                </a>
+                <ul>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('customer',$event,'PAǴINA INICIAL','fudelidade')">
+                            
+                            Listar Clientes Teste Fudelidade
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('customer',$event,'PAǴINA INICIAL','bradmontana')">
+                            
+                            Listar Clientes Bradmontana
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('customer',$event,'PAǴINA INICIAL','avantas')">
+                            
+                            Listar Clientes Avantajadas
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('customer',$event,'PAǴINA INICIAL','promocional')">
+                            
+                            Listar Clientes Promocional
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('newcustomer',$event,'PAǴINA INICIAL','')">
+                            Novo Cliente
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+            <li id="boletos" class="has-children">
+                <a onclick="mouseover_sub1(event, 'boletos') ">
+                    Boletos
+                </a>
+                <ul>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('billet',$event,'PAǴINA INICIAL','fudelidade')">
+                            
+                            Listar Boletos Teste Fudelidade
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('billet',$event,'PAǴINA INICIAL','bradmontana')">
+                            
+                            Listar Boletos Bradmontana
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('billet',$event,'PAǴINA INICIAL','avantas')">
+                            
+                            Listar Boletos Avantajadas
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('customer',$event,'PAǴINA INICIAL','promocional')">
+                            
+                            Listar Boletos Promocional
+                        </a>
+                    </li>
+                </ul>
+
+            </li> -->
+            <!-- <li id="planos" class="has-children">
+                <a onclick="mouseover_sub1(event, 'planos') ">
+                    Planos
+                </a>
+                <ul>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('planos',$event,'PAǴINA INICIAL','fudelidade')">
+                            Listar Planos Teste Fudelidade
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('planos',$event,'PAǴINA INICIAL','bradmontana')">
+                            Listar Planos Bradmontana
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('planos',$event,'PAǴINA INICIAL','avantas')">
+                            Listar Planos Avantajadas
+                        </a>
+                    </li>
+                    <li class=" sub-menu links ">
+                        <a ng-click="listar_todos('planos',$event,'PAǴINA INICIAL','promocional')">
+                            Promocional
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul> -->
+    </nav>
+    <div id="closeMenu" class=""></div>
+</div>
+<script type="text/javascript ">
+    var latid = 0;
+    var fid = 0;
+    function mouseover_sub1(event, id) {
+        event.preventDefault();
+        $("li ").each(function (index) {
+           $(this).removeClass("open");
+        });
+       $("#"+id).toggleClass("open");
+    
+            
+    }
+
+</script>
