@@ -1,9 +1,11 @@
 acme_api_person:
-    path:     /upload/person
+    pattern:     /upload/person
     defaults: { _controller: AcmeApiBundle:Person:xtractXmlPerson }
 
 acme_api_shiporder:
-    path:     /upload/shiporder
+    pattern:     /upload/shiporder
     defaults: { _controller: AcmeApiBundle:ShipOrder:xtractXmlShipOrder }
     
 
+# _acme_api:
+#      prefix: /upload/shiporder

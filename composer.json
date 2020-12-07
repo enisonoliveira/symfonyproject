@@ -8,28 +8,30 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.13",
-        "doctrine/orm": ">=2.2.3,<2.5-dev",
-        "doctrine/doctrine-bundle": "1.1.*",
-        "twig/extensions": "1.0.*@dev",
-        "symfony/assetic-bundle": "2.1.*",
-        "symfony/swiftmailer-bundle": "2.1.*",
-        "symfony/monolog-bundle": "2.1.*",
-        "sensio/distribution-bundle": "2.1.*",
-        "sensio/framework-extra-bundle": "2.1.*",
-        "sensio/generator-bundle": "2.1.*",
-        "jms/security-extra-bundle": "1.2.*",
-        "jms/di-extra-bundle": "1.1.*",
-        "kriswallsmith/assetic": "1.1.*@dev"
+        "doctrine/orm": "~2.4",
+        "doctrine/doctrine-bundle": "~1.5",
+        "doctrine/doctrine-fixtures-bundle": "~2.2",
+        "sensio/distribution-bundle": "~3.0.28",
+        "sensio/framework-extra-bundle": "~3.0",
+        "symfony/assetic-bundle": "~2.6",
+        "symfony/monolog-bundle": "~2.7",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "incenteev/composer-parameter-handler": "~2.1",
+        "symfony/symfony": "~2.7",
+        "twig/extensions": "~1.2",
+        "jms/security-extra-bundle": "1.6",
+        "jms/di-extra-bundle": "^1.6"
     },
     "scripts": {
         "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -39,8 +41,16 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
+        "symfony-assets-install": "symlink",
         "branch-alias": {
-            "dev-master": "2.1-dev"
+            "dev-master": "2.8-dev"
+        },
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
         }
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3"
     }
+
 }
