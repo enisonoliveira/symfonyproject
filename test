@@ -1,0 +1,3 @@
+cp personorder.xml src/Acme/ApiBundle/Tests/Controller
+cp shiporder.xml src/Acme/ApiBundle/Tests/Controller
+./phpunit -c app/

@@ -3,8 +3,33 @@
         <div class="titleSingle">
             Upload xml pessoas
             <div class="box1">
-                <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
-                <button ng-click="sair()" class="send ">Sair!</button>
+                <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone>
+
+                </div>
+                <br/>
+                <div>
+                    <div class="form" id="grid">
+                        <div>
+                            <ul ng-repeat="data in result" class="header_ul_table">
+                                <div class="header_table_customer">
+                                    <label> Id Ordem de carremgamento:{{data.orderid}}</label>
+                                    <label style="float: right;">Id Cliente::{{data.personid}}</label>
+                                </div>
+
+                                <div style=" border: solid 1px #666; background-color:#fff; height: 185px;">
+                                    <div style="float: left; width: 350px; padding: 10px;background:#fff;">
+                                        <label> Cliente :{{data.personname}}</label>
+                                        <br/>
+                                        <label> Telefone</label>
+                                        <hr>
+                                        <labe ng-repeat="phone in data.phone">{{phone.phone}}</label>
+                                            <br>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="errormodal " class="modalGeral errormodal ">
@@ -14,6 +39,17 @@
                 </div>
                 <div class="box ">
                     <p><strong>Sem acesso a funcionalidade!</strong></p>
+                    <button ng-click="sair($event) " class="send ">Operação não permitida!</button>
+                </div>
+            </div>
+        </div>
+        <div id="sucsseModal " class="modalGeral sucsseModal ">
+            <div class="content small ">
+                <div class="head ">
+                    Arquivo enviado!
+                </div>
+                <div class="box ">
+                    <p><strong>Arquivo enviado!</strong></p>
                     <button ng-click="sair($event) " class="send ">Operação não permitida!</button>
                 </div>
             </div>

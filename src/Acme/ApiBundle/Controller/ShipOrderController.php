@@ -61,19 +61,15 @@ class ShipOrderController extends Controller
                         $shiporder = new ShipOrder;
                         $shiporder->setOrderid( $model['orderid'])
                                     ->setPersonid(self::getPerson($model['orderperson']));
-                        $shiporder =  self::populate($shiporder);
+                       $shiporder =  self::populate($shiporder);
                         $shipto = new ShipTo;
                         $shipto->setName($model['shipto']['name'])
                             ->setAddress($model['shipto']['address'])
                             ->setCountry($model['shipto']['city']) 
                                 ->setOrderid( $shiporder) 
                             ->setCity($model['shipto']['country'])   ;
-                    self::populate( $shipto);
+                        self::populate( $shipto);
                         self::itemsToArray( $model['items'],$shiporder );
-                    
-                    }else{
-                        var_dump($model);
-                        echo "nãoe e array";
                     }
                 }
             }
@@ -95,6 +91,10 @@ class ShipOrderController extends Controller
                         ->setNote($model['note'])
                         ->setShiporderId($shiporder);
                         self::populate( $itemOrder);
+                }else{
+                    if(is_array($model)){
+                        self::itemsToArray($model,$shiporder);
+                    }
                 }
             }
         }catch (Exception $e) {

@@ -100,6 +100,12 @@ class PersonController extends Controller
                     self::populate($phone);
                 }
             }
+            if(is_numeric($phons)){
+                $phone = new Phone;
+                $phone->setPhone($phons)
+                    ->setPersonid($person);
+                self::populate($phone);
+            }
         }catch (Exception $e) {
             throw new Exception( $e->getMessage());
         }

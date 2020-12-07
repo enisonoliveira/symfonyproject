@@ -3,21 +3,75 @@
         <div class="titleSingle">
             Upload xml ordem de carregamento
             <div class="box1">
-                <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
-                <button ng-click="sair()" class="send ">Sair!</button>
+                <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone>
+
+                </div>
+                <br/>
+                <div>
+                    <div>
+                        <div>
+                            <ul ng-repeat="data in result" class="header_ul_table">
+                                <br>
+                                <div class="header_table_customer">
+                                    <label> Id Ordem de carremgamento:{{data.orderid}}</label>
+                                    <label style="float: right;">Id Cliente::{{data.personid}}</label>
+                                </div>
+
+                                <div style=" border: solid 1px #666; background-color:#fff; height: 230px;">
+                                    <div style="float: left; width: 350px; padding: 10px;background:#fff;">
+                                        <label ng-repeat="person in data.personorder"> Cliente :{{person.personname}}</label>
+                                        <br/>
+                                        <label> Telefone</label>
+                                        <hr>
+                                        <labe ng-repeat="phone in data.phone">{{phone.phone}}</label>
+                                            <br>
+                                    </div>
+                                    <hr>
+                                    <label> Envio para</label>
+                                    <hr>
+                                    <div ng-repeat="shipto in data.shipto" style="float: left;width: 50%;">
+                                        <label> Nome :{{shipto.name}}</label>
+                                        <br/>
+                                        <label>  Endereço :{{shipto.adress}}</label>
+                                        <br/>
+                                        <label>  Cidade :{{shipto.city}}</label>
+                                        <br/>
+                                        <label>  País :{{shipto.country}}</label>
+                                        <br/>
+                                    </div>
+                                    <div style="float: left;width: 100%;">
+                                        <label> Itens</label>
+                                        <hr>
+                                        <div style="float: left;width: 50%;" ng-repeat="items in data.items">
+                                            <label>  Nome :{{items.name}}</label>
+                                            <br/>
+                                            <label>  Titulo :{{items.title}}</label>
+                                            <br/>
+                                            <label>  Nota :{{items.note}}</label>
+                                            <br/>
+                                            <label>  Quantidade :{{items.quantity}}</label>
+                                            <br/>
+                                            <label>  preço :{{items.price}}</label>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="errormodal " class="modalGeral errormodal ">
+                <div class="content small ">
+                    <div class="head ">
+                        Não pode ser alterado!
+                    </div>
+                    <div class="box ">
+                        <p><strong>Sem acesso a funcionalidade!</strong></p>
+                        <button ng-click="sair($event) " class="send ">Operação não permitida!</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="errormodal " class="modalGeral errormodal ">
-            <div class="content small ">
-                <div class="head ">
-                    Não pode ser alterado!
-                </div>
-                <div class="box ">
-                    <p><strong>Sem acesso a funcionalidade!</strong></p>
-                    <button ng-click="sair($event) " class="send ">Operação não permitida!</button>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 </main>

@@ -1,24 +1,19 @@
 <div ng-controller="MainController as ctr">
     <nav id="menu">
         <ul class="parent-menu">
-            <li id="menu_alerts_notificacao" classe='close'>
-                <a ng-click="listar_todos('paginainicial',$event,'PAǴINA INICIAL','')" href="#">
-                    PÁGINA INICIAL
-                </a>
-            </li>
             <li id="operadores" class="has-children">
                 <a onclick="mouseover_sub1(event, 'operadores') ">
-                    OPERADOR
+                    Upload 
                 </a>
                 <ul>
                     <li class=" sub-menu links ">
-                        <a ng-click="listar_todos('users',$event,'PAǴINA INICIAL','')">
-                            Listar operadores
+                        <a ng-click="listar_todos('person',$event,'PAǴINA INICIAL','')">
+                            Uploads Pessoas 
                         </a>
                     </li>
                     <li class=" sub-menu links ">
-                        <a ng-click="listar_todos('newuser',$event,'PAǴINA INICIAL','')">
-                            NOVO OPERADOR
+                        <a ng-click="listar_todos('ordership',$event,'PAǴINA INICIAL','')">
+                            Uploads  Pedidos de carregamento navio
                         </a>
                     </li>
                 </ul>
@@ -127,14 +122,14 @@
 <script type="text/javascript ">
     var latid = 0;
     var fid = 0;
+
     function mouseover_sub1(event, id) {
         event.preventDefault();
-        $("li ").each(function (index) {
-           $(this).removeClass("open");
+        $("li ").each(function(index) {
+            $(this).removeClass("open");
         });
-       $("#"+id).toggleClass("open");
-    
-            
-    }
+        $("#" + id).toggleClass("open");
 
+
+    }
 </script>

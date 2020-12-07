@@ -1,5 +1,4 @@
-
-app.controller('UserController', function ($scope, $http, $location, $routeParams, $compile) {
+app.controller('UserController', function($scope, $http, $location, $routeParams, $compile) {
 
     $('body').removeClass('alertOpen');
     $('body').removeClass('userOpen');
@@ -11,23 +10,23 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
     $('#closeMenu').removeClass('opacity');
     $('#closeMenu').removeClass('open');
     $('nav#menu > ul > li.has-children').removeClass('open');
-    totalrow=0;
+    totalrow = 0;
     $scope.pageSelected = 0;
-    var ligado=false;
+    var ligado = false;
     var pagination = 10;
 
-    $scope.report= function(){
-        $location.path('/database').search({key: 'user_Table',name:"Operadores"});
+    $scope.report = function() {
+        $location.path('/database').search({ key: 'user_Table', name: "Operadores" });
     }
-    
-    $http.get(projectURL + '/user/getAll?limit1=' + 0 + "&limit2=" + pagination+"&token="+token)
-        .success(function (data) {
+
+    $http.get(projectURL + '/user/getAll?limit1=' + 0 + "&limit2=" + pagination + "&token=" + token)
+        .success(function(data) {
             $scope.users = data;
-            if(data.lenght>0){
+            if (data.lenght > 0) {
                 $scope.changePagenator(data[0].totalrow);
             }
         });
-        
+
     var limit1 = 100;
 
     $scope.form = {
@@ -40,7 +39,7 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
         description: "comum"
     };
 
-    $scope.new = function (event) {
+    $scope.new = function(event) {
         event.preventDefault();
         $scope.form.name = "";
         $scope.form.password = "";
@@ -54,19 +53,19 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
         };
     }
 
-    $scope.setUser = function (user) {
+    $scope.setUser = function(user) {
         $location.path('/updateuser').search(jQuery.param(user));;
 
     }
 
-    $scope.loadMore = function (page) {
+    $scope.loadMore = function(page) {
         if (typeof page !== 'undefined') {
             console.log(page.page);
             console.log(page);
             $scope.pageSelected = page.page;
             limit1 = limit1 + 100;
-            $http.get(projectURL + '/user/getAll?limit1=' + page.index + "&limit2=" + pagination+"&token="+token)
-                .success(function (data) {
+            $http.get(projectURL + '/user/getAll?limit1=' + page.index + "&limit2=" + pagination + "&token=" + token)
+                .success(function(data) {
                     $scope.users = data;
                 });
             $('a').removeClass('active');
@@ -74,13 +73,13 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
         }
 
     }
-    
-    if ($routeParams.iduser != null|$routeParams.id) {
+
+    if ($routeParams.iduser != null | $routeParams.id) {
         $scope.form.name = $routeParams.name;
         $scope.form.password = $routeParams.password
-        if($routeParams.id){
+        if ($routeParams.id) {
             $scope.form.iduser = $routeParams.id;
-        }else{
+        } else {
             $scope.form.iduser = $routeParams.iduser;
         }
         $scope.form.email = $routeParams.email;
@@ -101,21 +100,21 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
             $scope.form.description = "comum";
         };
     }
-  
-    $scope.delete = function (iduser) {
-        $http.get(projectURL + '/user/delete?iduser=' + iduser+"&token="+token)
-            .success(function (data) {
-                $http.get(projectURL +'/user/getAll?limit1=' + 0 + "&limit2=" + pagination+"&token="+token)
-                    .success(function (data) {
+
+    $scope.delete = function(iduser) {
+        $http.get(projectURL + '/user/delete?iduser=' + iduser + "&token=" + token)
+            .success(function(data) {
+                $http.get(projectURL + '/user/getAll?limit1=' + 0 + "&limit2=" + pagination + "&token=" + token)
+                    .success(function(data) {
                         $("#sucessomodal").show();
                         $scope.users = data;
-                    }).error(function (data) {
+                    }).error(function(data) {
                         $(".errormodal").show();
                     });
             })
     }
 
-    $scope.perfil = function (e) {
+    $scope.perfil = function(e) {
         $('#preLoadBodySpiner').hide();
         if (ligado) {
             $scope.form.data = {
@@ -131,8 +130,8 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
             $scope.form.description = "Master";
         }
     }
-   
-    $scope.validateForm = function () {
+
+    $scope.validateForm = function() {
         if ($scope.form.name == '') {
             $("#name").addClass('error');
             alert("Informe o campo nome");
@@ -153,7 +152,7 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
                         alert("Informe o campo phone");
                         return false;
                     } else {
-                        if($scope.form.password!=$scope.form.passwordverifier ){
+                        if ($scope.form.password != $scope.form.passwordverifier) {
                             alert("Confirmação de senha inválida");
                         }
                         return true;
@@ -163,34 +162,34 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
         }
         return true;
     }
-    
-    $scope.submit = function ($event) {
+
+    $scope.submit = function($event) {
         if ($scope.validateForm()) {
-            $http.get(projectURL + '/user/save?' + jQuery.param($scope.form)+"&token="+token).success(function (data) {
+            $http.get(projectURL + '/user/save?' + jQuery.param($scope.form) + "&token=" + token).success(function(data) {
                 $("#sucessomodal").show();
-            }).error(function (data) {
+            }).error(function(data) {
                 $(".errormodal").show();
             });
         }
     }
 
-    $scope.update = function ($event) {
+    $scope.update = function($event) {
         if ($scope.validateForm()) {
-            $http.get(projectURL + '/user/update?' + jQuery.param($scope.form)+"&token="+token).success(function (data) {
+            $http.get(projectURL + '/user/update?' + jQuery.param($scope.form) + "&token=" + token).success(function(data) {
                 $("#sucessomodal").show();
-            }).error(function (data) {
+            }).error(function(data) {
                 $(".errormodal").show();
             });
         }
     }
-    
-    $scope.sair = function () {
+
+    $scope.sair = function() {
         $(".modalGeral").hide();
     }
-   
+
     $scope.paginator = [];
-    
-    $scope.changePagenator = function (totalRow) {
+
+    $scope.changePagenator = function(totalRow) {
         totalRow = totalRow / pagination;
         console.log(totalRow);
         var a = 0;
@@ -204,4 +203,6 @@ app.controller('UserController', function ($scope, $http, $location, $routeParam
         }
         console.log($scope.paginator);
     }
+
+
 });

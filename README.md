@@ -1,3 +1,21 @@
+# dependencia  php
+  php 5.6
+
+# rode a switch de test 
+  sudo chmode 777 test
+  ./test
+
+# Gerar o banco de dados
+ php app/console doctrine:schema:update --force
+
+# startar a aplicação web, para que o front converse com o back local é preciso rodar na porta 8080 vai até a pasta web
+php -S localhost:8080
+
+# digite na ulr do navegador localhost:8080
+
+ localhost:8080
+
+
 Symfony Standard Edition
 ========================
 

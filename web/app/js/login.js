@@ -89,5 +89,6 @@
          $(this).removeClass('invalid');
      }
 
-
+     $scope.email = "enisonoliveira@hotmail.com"
+     $scope.password = "123456"
  });
