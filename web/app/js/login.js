@@ -44,7 +44,7 @@
              $('#preLoadLogin').show();
          }
 
-         $http.get('/validarsenha?password=' + this.password + '&email=' + $scope.email + '&certificado=' + 'token' + '&ip=' + ip)
+         $http.get('/app_dev.php/login?password=' + this.password + '&email=' + $scope.email + '&certificado=' + 'token' + '&ip=' + ip)
              .success(function(data) {
                  $('#preLoad').hide();
                  localStorage.setItem("tokenval", data.token);

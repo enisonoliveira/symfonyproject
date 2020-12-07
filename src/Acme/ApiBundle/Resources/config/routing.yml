@@ -14,5 +14,9 @@ acme_api_allperson:
 acme_api_allshiporder:
     pattern:     /all/shiporder
     defaults: { _controller: AcmeApiBundle:ShipOrder:getAll }
+
+acme_api_login:
+    pattern:     /login
+    defaults: { _controller: AcmeApiBundle:Login:login }
 # _acme_api:
 #      prefix: /upload/shiporder

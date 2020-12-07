@@ -15,6 +15,8 @@ php -S localhost:8080
 
  localhost:8080
 
+# o front e baseado em angularjs acessando a index.html no diretorio web, e logando irá redirecionar para o menu principal.
+
 
 Symfony Standard Edition
 ========================
